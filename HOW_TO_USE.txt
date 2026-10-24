@@ -1,0 +1,38 @@
+HOW TO USE: memory
+====================================
+
+PURPOSE
+  Standardize persistent bot memory, session synchronization, and decision logging
+  via the structured Task Ledger and Hypothesis Ledger architecture.
+
+CAPABILITIES
+  - Read and synchronize with persistent memory state (lessons-learned.md)
+  - Rolling window task pruning (keep most recent 50 tasks, 20 decisions)
+  - Hypothesis testing and evidence tracking tables
+  - Append-only architectural decision logging
+  - Sub-agent and worker state delegation rules (read-only worker enforcement)
+
+USE CASES
+  - Synchronize task progress across recurring or long-running bot sessions
+  - Keep a continuous record of architectural decisions and verified root causes
+  - Provide worker agents with scoped context without risking memory race conditions
+
+IDEAS
+  - Use Task Ledger to resume paused multi-session workflows
+  - Formulate competing hypotheses when troubleshooting elusive bugs
+  - Track merged pull requests and verify CI completion states
+
+PROMPTS YOU CAN PASTE
+  Synchronize with persistent memory and check the Task Ledger.
+
+  Log this decision and investigation finding to the memory ledger.
+
+  Prune the lessons-learned.md task list down to the latest 50 entries.
+
+EXAMPLE FLOW
+  You:   Sync with memory and report pending tasks.
+  Model: Reads lessons-learned.md, checks gh PR/issue state,
+         updates ledger status, and presents active tasks.
+
+DEFAULT GOALS IF YOU DON'T NAME ONE
+  Read lessons-learned.md, report active tasks from the Task Ledger, and verify current system state.
